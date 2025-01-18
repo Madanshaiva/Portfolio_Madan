@@ -1,0 +1,24 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #0788ff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.cursor__follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(55, 126, 184, 0.851);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.2s ease;
+  z-index: 1000;
+}

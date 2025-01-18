@@ -1,0 +1,188 @@
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background: linear-gradient(90deg, #07233b 1.67%, #041d34 39.95%, #04192d 58.24%, #040e18 80.28%, #050c16 101.48%);
+  color: white;
+  height: 100vh;
+  text-transform: uppercase; /* Make all text uppercase */
+}
+
+.App {
+  width: 100%;
+  height: 100%;
+  padding-top: 100px; /* Added padding to ensure content isn't hidden under fixed header */
+}
+
+/* Navbar */
+.nav-links li:hover {
+  scale: 1.4;
+  transition: all 0.5s;
+}
+
+.nav-links li a {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-links li a::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+  background-color:  #007bff;
+  transform: scaleX(0);
+  transition: all 0.5s;
+}
+
+.nav-links li a:hover::after {
+  transform: scaleX(1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 1000; /* Ensures the header stays on top */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth background color and shadow transition */
+}
+
+/* Add background color and shadow to the header when scrolled */
+.header.scrolled {
+  background-color: #040c16;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  padding-left: 2.5%;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Black shadow */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding-right: 7%;
+}
+
+.nav-links li {
+  font-size: 21px;
+  font-family: 'Space Grotesk', sans-serif;
+  padding: 8px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Black shadow */
+}
+
+.nav-links li a:hover {
+  color: #007bff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Darker shadow on hover */
+}
+
+/* Intro Section */
+.intro-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 82vh; /* Makes the intro section full screen */
+  margin: 0;
+}
+
+.left-side {
+  max-width: 50%;
+  padding-left: 5%;
+}
+
+.left-side h1 {
+  font-size: 74px;
+  margin-bottom: 10px;
+}
+
+.left-side h2 {
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.left-side p {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+/* View Resume Button Styling */
+.view-resume-btn {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+  text-transform: uppercase;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.view-resume-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
+}
+
+/* Right-side Image */
+.right-side {
+  max-width: 50%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.5s ease-in-out;
+  padding-right: 10%;
+}
+
+.right-side img {
+  width: 600px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.5s, box-shadow 0.5s;
+  margin-top: 18.7%;
+}
+
+.right-side img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Typing effect */
+.typing-effect {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 55px;
+  animation: typing 2s steps(15) infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20em;
+  }
+}
