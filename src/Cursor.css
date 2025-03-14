@@ -22,3 +22,14 @@
   transition: transform 0.2s ease;
   z-index: 1000;
 }
+@media (max-width: 768px) {
+  .custom-cursor {
+    display: none !important;
+  }
+
+  body {
+    cursor: default !important;
+  }
+}
+
+

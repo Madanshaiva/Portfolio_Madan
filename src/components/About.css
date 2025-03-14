@@ -1,20 +1,92 @@
-/* About.css */
 .about-section {
-  padding: 50px 20px;
-  background-color: rgba(55, 126, 184, 0.2); /* Light background color */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 100px 15%;  */
+  background: rgba(55, 126, 184, 0.2); /* Updated background */
   color: white;
-  display: block; /* Make sure it's set to display */
-  opacity: 1; /* Ensure it's visible */
+  text-align: center;
+  box-sizing: border-box;
 }
 
-.about-section h2 {
-  text-align: center;
+/* About Title */
+.about-title {
   font-size: 50px;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 40px;
+  background: linear-gradient(90deg, #ff6b6b, #f7b733, #45cafc, #30336b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  padding-bottom: 12px;
+  animation: glowText 1.5s infinite alternate ease-in-out;
 }
 
+/* Underline */
+.about-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 50%;
+  height: 5px;
+  background: linear-gradient(90deg, #ff6b6b, #f7b733, #45cafc, #30336b);
+  border-radius: 5px;
+  transform: translateX(-50%);
+  transition: width 0.4s ease-in-out;
+}
+
+.about-title:hover::after {
+  width: 70%;
+}
+
+/* About Content */
 .about-section p {
   font-size: 18px;
-  line-height: 1.6;
-  margin-top: 20px;
+  line-height: 2;
+  max-width: 900px;
+  margin: 20px 0;
+  text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-title {
+    font-size: 40px; /* Adjust for tablets */
+  }
+  .about-section p {
+    font-size: 18px; /* Adjust for tablets */
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 36px; /* Adjust for smaller tablets */
+  }
+  .about-section {
+    padding: 60px 10%; /* Adjust padding for smaller tablets */
+  }
+  .about-section p {
+    font-size: 16px; /* Adjust for smaller tablets */
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 32px; /* Adjust for mobile */
+  }
+  .about-section {
+    padding: 40px 5%; /* Adjust padding for mobile */
+  }
+  .about-section p {
+    font-size: 14px; /* Adjust for mobile */
+    line-height: 1.5;
+  }
 }

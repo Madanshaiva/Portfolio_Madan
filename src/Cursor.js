@@ -3,6 +3,11 @@ import './Cursor.css';
 
 const Cursor = () => {
   useEffect(() => {
+    if (window.innerWidth <= 768) {
+      document.body.style.cursor = "default"; // Ensure default cursor on mobile
+      return; // Stop execution here (no need to create cursor elements)
+    }
+
     const cursor = document.createElement('div');
     cursor.classList.add('cursor');
     document.body.appendChild(cursor);
@@ -20,16 +25,16 @@ const Cursor = () => {
       setPosition(follower, e);
     };
 
-    document.addEventListener('mousemove', handleMouseMove); // Attach to the entire document for full-screen coverage
+    document.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      document.body.removeChild(cursor);
-      document.body.removeChild(follower);
+      if (document.body.contains(cursor)) document.body.removeChild(cursor);
+      if (document.body.contains(follower)) document.body.removeChild(follower);
       document.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
-  return null; // No visible output for this component
+  return null;
 };
 
 export default Cursor;

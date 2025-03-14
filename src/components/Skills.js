@@ -1,18 +1,34 @@
-import React from 'react';
-import './Skills.css';
+import React from "react";
+import "./Skills.css";
+
+const skills = [
+  "React.js",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "C & C++",
+  "PHP",
+  "MongoDB",
+  "Digital Marketing",
+  "Prompt Engineering",
+];
 
 const Skills = () => {
   return (
-    <div className="skills-section" id="skills">
-      <h2>Skills</h2>
-      <p>Here are the skills I specialize in:</p>
-      <ul>
-        <li>JavaScript (React, Node.js)</li>
-        <li>AI/ML (Python, TensorFlow)</li>
-        <li>Digital Marketing</li>
-        <li>UI/UX Design</li>
-      </ul>
-    </div>
+    <section className="skills-section">
+      <h2 className="skills-title">My Skills</h2>
+      <div className="skills-container">
+        {skills.map((skill, index) => (
+          <div
+            className="skill fade-in"
+            key={index}
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            <h3 className="skill-name">{skill}</h3>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

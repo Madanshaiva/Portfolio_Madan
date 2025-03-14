@@ -1,46 +1,42 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
-import Cursor from './Cursor';
-import Header from './components/Header';
-import Home from './components/Home';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Cursor from "./Cursor";
+import Home from "./components/Home";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
-  const [role, setRole] = useState('Developer');
-  const [scrolled, setScrolled] = useState(false);
-  const aboutRef = useRef(null);
-
-  // Scroll event handler
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Role switching
-  useEffect(() => {
-    const roles = ['Developer', 'Designer'];
-    const interval = setInterval(() => {
-      setRole((prevRole) => (prevRole === roles[0] ? roles[1] : roles[0]));
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="App">
+    <Router>
       <Cursor />
-      <Header scrolled={scrolled} />
-      <Home role={role} />
-      <About ref={aboutRef} />
-      <Skills />
-      <Projects />
-      <Contact />
-    </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Home />
+              <div id="about">
+                <About />
+              </div>
+              <div id="skills">
+                <Skills />
+              </div>
+              <div id="projects">
+                <Projects />
+              </div>
+              <div id="contact">
+                <Contact />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 
