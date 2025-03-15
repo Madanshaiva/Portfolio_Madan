@@ -144,7 +144,7 @@ function Home() {
             I'M A <span className="typing-effect">{role}</span>
           </h2>
           <p>AI & ML Enthusiast | Digital Marketing Specialist</p>
-          <a href="/resume.pdf" download>
+          <a href="madan.pdf" download>
             <button className="view-resume-btn">View Resume</button>
           </a>
         </div>

@@ -169,6 +169,8 @@
 
   .contact-item.email p {
     font-size: 18px; /* Smaller font size for mobile */
+    text-align: center;
+    border: solid red;
   }
 
   .social-icons-list {

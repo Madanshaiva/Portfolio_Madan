@@ -1,4 +1,6 @@
 footer {
+    height: 2vh;
+    width: 100vw;
     background-color: rgba(55, 126, 184, 0.2);
     padding: 20px;
     text-align: center;
