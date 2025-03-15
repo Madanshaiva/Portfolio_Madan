@@ -14,15 +14,11 @@ const Contact = () => {
       </div>
 
       <div className="contact-info">
-        {/* <div className="contact-item-email">
-          <h3>Email</h3>
-          <p><a href="mailto:madanshaivackm06@gmail.com">madanshaivackm06@gmail.com</a></p>
-        </div> */}
-
+        
         <div className="contact-item-social-icons">
           <h3>Social Media</h3>
           <div className="social-icons-list">
-            <a href="https://www.instagram.com/hustle_growup" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/madanshaiva06" target="_blank" rel="noopener noreferrer">
               <FaInstagram size={40} />
             </a>
             <a href="https://www.linkedin.com/in/madan-k-188078282" target="_blank" rel="noopener noreferrer">

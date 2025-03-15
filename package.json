@@ -2,7 +2,7 @@
   "name": "myportfolio-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Madanshaiva.github.io/Portfolio_Madan",
+  "homepage": "/",
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

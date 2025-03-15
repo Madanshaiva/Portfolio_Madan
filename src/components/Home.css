@@ -169,33 +169,41 @@ body, html {
   transition: transform 0.5s, box-shadow 0.5s;
   margin-top: 18.7%;
 }
-
-/* Typing effect */
+/* Sliding Effect */
 .typing-effect {
-  color: #0788ff;
+  color: #0788ff; /* Blue color for the text */
   font-weight: bold;
+  display: inline-block; /* Ensure it stays inline */
+  overflow: hidden; /* Hide overflow */
+  white-space: nowrap; /* Prevent text from wrapping */
+  vertical-align: bottom; /* Align text properly */
+}
+
+.typing-effect span {
   display: inline-block;
-  border-right: 2px solid white;
-  animation: typing 4s steps(19, end), blink 0.5s step-end infinite;
+  animation: slideInOut 4s infinite; /* Slide in and out every 4 seconds */
 }
 
-@keyframes typing {
-  from {
-    width: 0;
+@keyframes slideInOut {
+  0% {
+    transform: translateX(-100%); /* Start off-screen to the left */
+    opacity: 0; /* Start invisible */
   }
-  to {
-    width: 19ch;
+  25% {
+    transform: translateX(0); /* Slide into view */
+    opacity: 1; /* Fully visible */
+  }
+  75% {
+    transform: translateX(0); /* Stay in view */
+    opacity: 1; /* Fully visible */
+  }
+  100% {
+    transform: translateX(100%); /* Slide out of view to the right */
+    opacity: 0; /* Fade out */
   }
 }
 
-@keyframes blink {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: white;
-  }
-}
+
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
