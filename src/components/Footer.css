@@ -3,7 +3,7 @@ footer {
     width: 100vw;
     background-color: rgba(55, 126, 184, 0.2);
     padding: 20px;
-    text-align: center;
+    /* text-align: center; */
     color: white;
     width: 100vw;
   }
@@ -11,5 +11,6 @@ footer {
   footer p {
     font-size: 18px;
     margin: 0;
+    text-align: center;
   }
   

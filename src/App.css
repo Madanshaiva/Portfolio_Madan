@@ -3,7 +3,7 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Space Grotesk', sans-serif;
-  background: linear-gradient(90deg, #07233b 1.67%, #041d34 39.95%, #04192d 58.24%, #040e18 80.28%, #050c16 101.48%);
+  /* background: linear-gradient(90deg, #07233b 1.67%, #041d34 39.95%, #04192d 58.24%, #040e18 80.28%, #050c16 101.48%); */
   color: white;
   height: 100vh;
   text-transform: uppercase;

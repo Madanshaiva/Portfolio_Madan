@@ -1,22 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll"; // Smooth scroll
 import "./Home.css";
 import madanImage from "../assets/images/NIS_6067-Photoroomm.png";
 
 function Home() {
-  const [role, setRole] = useState("Developer");
+  const roles = useMemo(() => ["Developer", "Designer"], []); 
+  const [role, setRole] = useState("");
+  const [index, setIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [reverse, setReverse] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuActive, setMenuActive] = useState(false); // State for mobile menu
   const location = useLocation(); // Get current page URL
 
-  // Typing Effect (Developer <-> Designer)
+  // Typing Effect Logic
   useEffect(() => {
-    const interval = setInterval(() => {
-      setRole((prevRole) => (prevRole === "Developer" ? "Designer" : "Developer"));
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
+    const timeout = setTimeout(() => {
+      if (!reverse && subIndex < roles[index].length) {
+        setSubIndex((prev) => prev + 1);
+      } else if (reverse && subIndex > 0) {
+        setSubIndex((prev) => prev - 1);
+      } else if (!reverse && subIndex === roles[index].length) {
+        setReverse(true);
+        setTimeout(() => {}, 1000);
+      } else {
+        setReverse(false);
+        setIndex((prev) => (prev + 1) % roles.length);
+      }
+      setRole(roles[index].substring(0, subIndex));
+    }, reverse ? 100 : 200); // Typing speed
+
+    return () => clearTimeout(timeout);
+  }, [subIndex, index, reverse, roles]);
 
   // Scroll Effect for Navbar
   useEffect(() => {
@@ -153,7 +169,6 @@ function Home() {
           <img src={madanImage} alt="Madan" />
         </div>
       </section>
-
     </div>
   );
 }

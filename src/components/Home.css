@@ -171,37 +171,15 @@ body, html {
 }
 /* Sliding Effect */
 .typing-effect {
-  color: #0788ff; /* Blue color for the text */
-  font-weight: bold;
-  display: inline-block; /* Ensure it stays inline */
-  overflow: hidden; /* Hide overflow */
-  white-space: nowrap; /* Prevent text from wrapping */
-  vertical-align: bottom; /* Align text properly */
+  border-right: 2px solid white; /* Blinking cursor */
+  padding-right: 5px;
+  animation: blink 0.7s infinite;
 }
 
-.typing-effect span {
-  display: inline-block;
-  animation: slideInOut 4s infinite; /* Slide in and out every 4 seconds */
+@keyframes blink {
+  50% { border-color: transparent; }
 }
 
-@keyframes slideInOut {
-  0% {
-    transform: translateX(-100%); /* Start off-screen to the left */
-    opacity: 0; /* Start invisible */
-  }
-  25% {
-    transform: translateX(0); /* Slide into view */
-    opacity: 1; /* Fully visible */
-  }
-  75% {
-    transform: translateX(0); /* Stay in view */
-    opacity: 1; /* Fully visible */
-  }
-  100% {
-    transform: translateX(100%); /* Slide out of view to the right */
-    opacity: 0; /* Fade out */
-  }
-}
 
 
 

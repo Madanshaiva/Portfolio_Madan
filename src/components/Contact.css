@@ -167,10 +167,10 @@
     font-size: 16px; /* Smaller font size for mobile */
   }
 
-  .contact-item.email p {
-    font-size: 18px; /* Smaller font size for mobile */
+  .contact-item-email p {
+    font-size: 15px; /* Smaller font size for mobile */
     text-align: center;
-    border: solid red;
+   
   }
 
   .social-icons-list {

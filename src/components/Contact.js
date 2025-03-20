@@ -10,7 +10,7 @@ const Contact = () => {
       </div>
 
       <div className="contact-description">
-        <p>I'm always open to neew opportunities and collabrations</p>
+        <p>I'm always open to new opportunities and collabrations</p>
         <p>Feel free to reach out to me through any of the channels below:</p>
       </div>
 
